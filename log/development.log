@@ -6990,3 +6990,21 @@ Processing by PostsController#show as HTML
   [1m[35mCACHE (0.0ms)[0m  SELECT  "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", "17"]]
   Rendered posts/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 25ms (Views: 16.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/posts/new" for 126.2.63.14 at 2019-03-10 08:39:10 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#new as HTML
+  Rendered posts/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 17ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/posts" for 126.2.63.14 at 2019-03-10 08:39:20 +0000
+Cannot render console from 126.2.63.14! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#create as */*
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U9viekvQV+0NnAMvCs6WNAaMpwjG8P+aRtPpfyaUPMyUEmbmWfFDLwi426k3lkE52yJI5X5Abu3puALyA9LeNw==", "post"=>{"title"=>"New post", "description"=>"great!"}}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "posts" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)  [["title", "New post"], ["description", "great!"], ["created_at", "2019-03-10 08:39:20.299352"], ["updated_at", "2019-03-10 08:39:20.299352"]]
+  [1m[36m (15.2ms)[0m  [1mcommit transaction[0m
+[active_model_serializers] Rendered PostSerializer with ActiveModelSerializers::Adapter::Attributes (0.17ms)
+Completed 201 Created in 21ms (Views: 1.9ms | ActiveRecord: 15.6ms)
