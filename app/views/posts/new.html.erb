@@ -17,7 +17,13 @@
     $('form').submit(function(event) {
       // Prevent form from submitting the default way
       event.preventDefault();
-      alert("yo");
+
+      var values = $(this).serialize();
+      var posting = $.post('/posts', values);
+
+      posting.done(function(data) {
+        // TODO: handle response
+      });
     });
   });
 </script>
